@@ -61,4 +61,10 @@ public class Utils {
         signature.update(hash.getBytes());
         return signature.verify(Base64.getDecoder().decode(sig));
     }
+
+    public static String generateNonce() {
+        byte[] nonce = new byte[16];
+        new SecureRandom().nextBytes(nonce);
+        return Base64.getEncoder().encodeToString(nonce);
+    }
 }
