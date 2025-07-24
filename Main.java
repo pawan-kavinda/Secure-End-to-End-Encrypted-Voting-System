@@ -15,12 +15,12 @@ public class Main {
         boolean isServerAuthenticated = alice.verifyServerResponse(serverVerificationCode, signedChallenge, server.getPublicKey());
 
         if (!isServerAuthenticated) {
-            System.err.println("❌ Server verification failed. Aborting vote...");
+            System.err.println("Server verification failed. Aborting vote...");
             
             return;
         }
 
-        System.out.println("✅ Server verified. Proceeding to vote...\n");
+        System.out.println("Server verified. Proceeding to vote...\n");
 
         
         //Alice prepares anonymous encrypted vote package
